@@ -1,0 +1,9 @@
+tsne-torch
+numpy
+pandas
+scikit-learn
+scipy
+torch
+seaborn
+matplotlib
+pygad
