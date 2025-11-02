@@ -86,6 +86,54 @@ FedGA-Meta outperforms all baselines in:
 - **Cost-effectiveness** — better trade-off between local computation and communication.  
 
 
+
+## 📁 Repository Structure
+
+The repository is organized into modular components reflecting the hierarchical architecture of the **FedGA-Meta** framework.
+
+FedGA-Meta-CESI/
+│
+├── Aggregation/ # Baseline aggregation algorithms
+│ ├── FedAvg.py # Standard FedAvg algorithm
+│ ├── FedGA.py # Genetic aggregation (base version)
+│ ├── FedGA-p.py # Optimized FedGA variant
+│ ├── FedPer.py # Federated personalization (FedPer)
+│
+├── Algorithms/ # Core FL algorithms and dataset scripts
+│ ├── FedGA_Meta.py # Main FedGA-Meta implementation
+│ ├── FedMAML.py, FedProx.py, FedPer.py, FedGA.py # Comparative baselines (meta-learning & proximal)
+│ ├── emnist.py, mnist.py, svhn.py, usps.py, mnistm.py # Dataset loaders
+│
+├── Entities/ # FL architecture simulation (Edge/Fog/Cloud)
+│ ├── edge.py # Edge participant logic (local training)
+│ ├── fog.py # Fog server logic (partial aggregation)
+│ ├── Admin.py, Servers.py # Cloud-level coordination and orchestration
+
+│
+├── data/ # Dataset management and visualization tools
+│ ├── Dataset.py, createSets.py, data_saving.py
+│ ├── TSNE.py # t-SNE visualization for feature embeddings
+│ ├── params.py, tab.py # Configuration and preprocessing helpers
+│ ├── *.mat, *.pkl # Preprocessed datasets (e.g., SVHN, USPS)
+│
+├── models/ # Neural network architectures (CNN-based)
+│ ├── Model.py, ImageClassificationBase.py
+│ ├── clayers.py, modelCloud.py
+│ ├── modelsvhn.py, modelemnist.py, modelusps.py, modelmistm.py
+│
+├── results_algos/ # Experimental results and visualizations
+│ ├── fog1_Test_F1.png ... # F1, ECE, and fairness plots per fog
+│ ├── tableau_global_round50.tex # LaTeX summary of global results
+│
+├── visualise_metrics.py # Metric plotting utility
+├── visualise_tabs.py # Table generation and rendering
+├── options.py # Configuration and argument parser
+├── requirements.txt # List of required Python packages
+├── lunch-project.bat # Windows automation script for experiments
+├── run_all.sh # macOS/Linux automation script for experiments
+└── structure.txt # Generated tree structure of the repository
+
+
 ## 🧱 Technologies & Dependencies
 FedGA-Meta is implemented in **Python 3.9** and leverages several scientific and machine learning libraries to ensure modularity, flexibility, and scalability of experiments.
 
@@ -105,7 +153,7 @@ FedGA-Meta is implemented in **Python 3.9** and leverages several scientific and
 ```bash
 pip install -r requirements.txt
 ```
- 
+
 ## 🚀 Usage
 
 
