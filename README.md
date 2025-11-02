@@ -101,4 +101,6 @@ FedGA-Meta is implemented in **Python 3.9** and leverages several scientific and
 - **matplotlib** — Plotting and result visualization for training curves and heatmaps.
   
 
-## 🧩 Repository Structure
+### Installation
+```bash
+pip install -r requirements.txt 
