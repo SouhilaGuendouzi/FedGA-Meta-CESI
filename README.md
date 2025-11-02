@@ -104,3 +104,14 @@ FedGA-Meta is implemented in **Python 3.9** and leverages several scientific and
 ### Installation
 ```bash
 pip install -r requirements.txt 
+## 🚀 Usage
+```
+
+### 🔹 Run all experiments automatically
+To execute all comparative frameworks (FedAvg, FedProx, FedPer, FedMAML, FedGA, and FedGA-Meta) under different local training configurations, simply run:
+
+
+#### On Windows:
+```bash
+lunch-project.bat
+```
