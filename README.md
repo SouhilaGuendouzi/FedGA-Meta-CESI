@@ -86,9 +86,6 @@ FedGA-Meta outperforms all baselines in:
 - **Cost-effectiveness** — better trade-off between local computation and communication.  
 
 
-
-<pre> ## 📁 Repository Structure The repository is organized into modular components reflecting the hierarchical architecture of the **FedGA-Meta** framework. ``` FedGA-Meta-CESI/ │ ├── Aggregation/ │ ├── FedAvg.py # Standard FedAvg algorithm │ ├── FedGA.py # Genetic aggregation (base version) │ ├── FedGA-p.py # Optimized FedGA variant │ ├── FedPer.py # Federated personalization (FedPer) │ ├── Algorithms/ │ ├── FedGA_Meta.py # Main FedGA-Meta implementation │ ├── FedMAML.py # Meta-learning baseline │ ├── FedProx.py # Proximal regularization baseline │ ├── emnist.py, mnist.py, svhn.py, usps.py, mnistm.py # Dataset loaders │ ├── Entities/ │ ├── edge.py # Edge participant logic (local training) │ ├── fog.py # Fog server logic (partial aggregation) │ ├── Admin.py, Servers.py # Cloud-level orchestration │ ├── Location.py # Network topology and mapping │ ├── Edge_bc.py, Fog_bc.py # Blockchain-based fog/edge variants │ ├── data/ │ ├── Dataset.py, createSets.py, data_saving.py │ ├── TSNE.py # t-SNE feature visualization │ ├── params.py, tab.py # Preprocessing and configuration utilities │ ├── *.mat, *.pkl # Preprocessed datasets (e.g., SVHN, USPS) │ ├── models/ │ ├── Model.py, ImageClassificationBase.py │ ├── clayers.py, modelCloud.py │ ├── modelsvhn.py, modelemnist.py, modelusps.py, modelmistm.py │ ├── results_algos/ │ ├── fog1_Test_F1.png ... # F1, ECE, and fairness plots per fog │ ├── tableau_global_round50.tex # LaTeX summary of global results │ ├── visualise_metrics.py # Plotting and metric visualization ├── visualise_tabs.py # LaTeX/table rendering utility ├── options.py # Argument parser and configuration handler ├── requirements.txt # List of required dependencies ├── lunch-project.bat # Windows automation script ├── run_all.sh # macOS/Linux automation script └── structure.txt # Auto-generated project tree ``` </pre>
-
 ## 🧱 Technologies & Dependencies
 FedGA-Meta is implemented in **Python 3.9** and leverages several scientific and machine learning libraries to ensure modularity, flexibility, and scalability of experiments.
 
@@ -126,4 +123,21 @@ lunch-project.bat
 chmod +x run_all.sh
 ./run_all.sh
 ```
+### 🔹 Visualize results
 
+After the training phase is completed, all results (metrics, plots, and LaTeX tables) are automatically saved inside:
+```bash
+results_algos/
+```
+
+To visualize the metrics as figures (e.g., Accuracy, F1-score, ECE, and fairness), run:
+```bash
+python visualise_metrics.py
+
+```
+
+To display or export the summary tables in LaTeX or terminal format, run:
+```bash
+python visualise_tabs.py
+
+```
